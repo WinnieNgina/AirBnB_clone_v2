@@ -35,10 +35,10 @@ def do_deploy(archive_path):
         return False
     if run("rm /tmp/{}".format(filewithextension)).failed is True:
         return False
-    if run("mv /data/web_static/releases/{}/web_static/*" "/data/web_static/releases/{}/".format(filename, filename)).failed is True:
+    if run("mv /data/web_static/releases/{}/web_static/* /data/web_static/releases/{}/".format(filename, filename)).failed is True:
         return False
         # move the files to right directory
-    if run("rm -rf /data/web_static/releases/{}/web_static/".format(filename, filename)).failed is True:
+    if run("rm -rf /data/web_static/releases/{}/web_static/".format(filename)).failed is True:
         return False
         # Remove the directory
     if run("rm -rf /data/web_static/current").failed is True:
@@ -49,3 +49,4 @@ def do_deploy(archive_path):
         return False
     return True
     # if all steps are executed sucessfully return True
+
