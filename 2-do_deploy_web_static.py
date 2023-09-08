@@ -13,7 +13,7 @@ def do_deploy(archive_path):
         return False
     # Remove version
     filewithextension = archive_path.split("/")[-1]
-    filename = filewithextension.split(".")[0]
+    filename = filewithextension.strip('.trg')
     if put(archive_path, "/tmp/{}".format(filename)).failed is True:
         return False
         # If failed is True, means upload was unseccessful
