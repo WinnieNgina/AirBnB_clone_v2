@@ -20,6 +20,7 @@ def do_pack():
     else:
         return archive_path
 
+
 def do_deploy(archive_path):
     '''use os module to check for valid file path'''
     if os.path.exists(archive_path):
