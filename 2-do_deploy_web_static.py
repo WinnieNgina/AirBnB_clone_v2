@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 # Fabfile that distributes an archive to your web servers
-from fabric.api import put, env, run, local
+from fabric.api import *
 from datetime import datetime
 import os
 
-env.hosts = ["100.24.253.204"]
+env.hosts = ['100.24.253.204']
+env.user = 'ubuntu'
+env.key_filename = '~/.ssh/id_rsa'
 
 
 def do_pack():
@@ -34,6 +36,5 @@ def do_deploy(archive_path):
         run("rm -rf {}web_static".format(f_path))
         run("rm -rf /data/web_static/current")
         run("ln -s {} /data/web_static/current".format(f_path))
-
         return True
     return False
