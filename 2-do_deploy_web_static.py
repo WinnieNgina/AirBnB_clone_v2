@@ -3,7 +3,7 @@ from fabric.api import *
 from datetime import datetime
 import os
 
-env.hosts = ['localhost', '52.91.168.104', '100.24.253.204']
+env.hosts = ['52.91.168.104', '100.24.253.204']
 env.user = 'ubuntu'
 # env.key_filename = '~/.ssh/id_rsa'
 
@@ -52,7 +52,4 @@ def do_deploy(archive_path):
 
         return True
     return False
-
-# Example usage: fab deploy (for remote server deployment)
-# Example usage: IS_LOCAL=true fab deploy (for local deployment)
 
