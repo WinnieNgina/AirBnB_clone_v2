@@ -39,6 +39,8 @@ def do_deploy(archive_path):
         run("ln -s {} /data/web_static/current".format(f_path))
         return True
     return False
+
+
 def deploy():
     """
     Deploy the web_static content to web servers.
