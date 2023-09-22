@@ -10,7 +10,7 @@ def hello_hbnb():
     '''
     script that starts a Flask web application:
     '''
-    return "Hello, HBNB"
+    return "Hello HBNB!"
 
 
 if __name__ == '__main__':
