@@ -20,7 +20,7 @@ def states_list():
 
 
 @app.teardown_appcontext
-def close_session ():
+def close_session(self):
     '''Removes current SQLAlchemy session'''
     storage.close()
 
